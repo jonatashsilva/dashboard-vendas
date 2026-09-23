@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <title>
+        Acompanhamento de Vendas
+    </title>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="topo">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <img
+                src="static/logo.png"
+                alt="DTEL Telecom"
+            >
+
+        </div>
+
+
+        <!-- TÍTULO -->
+
+        <div class="titulo">
+
+            <h1>
+                Acompanhamento de Vendas
+            </h1>
+
+            <p>
+                Visão Geral do Período
+            </p>
+
+        </div>
+
+
+        <!-- =========================
+             FILTROS
+        ========================== -->
+
+        <div class="filtros-topo">
+
+
+            <div class="campo-data">
+
+                <label for="data-inicial">
+                    Data de Início
+                </label>
+
+                <input
+                    type="date"
+                    id="data-inicial"
+                >
+
+            </div>
+
+
+            <div class="campo-data">
+
+                <label for="data-final">
+                    Data de Fim
+                </label>
+
+                <input
+                    type="date"
+                    id="data-final"
+                >
+
+            </div>
+
+
+            <div class="acoes">
+
+                <button
+                    class="btn-filtrar"
+                    onclick="carregarVendas()"
+                >
+                    ⚱ Filtrar
+                </button>
+
+
+                <button
+                    class="btn-limpar"
+                    onclick="limparFiltros()"
+                >
+                    ◱ Limpar
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+    <!-- =========================
+         CONTEÚDO
+    ========================== -->
+
+    <main class="container">
+
+
+        <!-- =========================
+             RANKING
+        ========================== -->
+
+        <section class="painel ranking">
+
+
+            <div class="titulo-painel">
+
+                <h2>
+                    🏆 Ranking de Vendas
+                </h2>
+
+            </div>
+
+
+            <div id="lista-vendedores">
+
+                <!--
+                    Preenchido automaticamente
+                    pelo JavaScript
+                -->
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================
+             VENDAS
+        ========================== -->
+
+        <section class="painel desempenho">
+
+
+            <div class="titulo-painel">
+
+                <h2>
+                    Vendas
+                </h2>
+
+            </div>
+
+
+            <!-- =========================
+                 TOTAL DE VENDAS
+            ========================== -->
+
+            <div class="resumo">
+
+
+                <div class="resumo-item">
+
+
+                    <div class="icone">
+
+                        💵
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Total de Vendas
+                        </span>
+
+                        <strong id="total-vendas">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================
+                 PLANOS VENDIDOS
+            ========================== -->
+
+            <div class="planos-vendidos">
+
+
+                <h3>
+                    Planos Vendidos
+                </h3>
+
+
+                <div id="lista-planos">
+
+                    <!--
+                        Preenchido automaticamente
+                        pelo JavaScript
+                    -->
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================
+             VENDAS POR CIDADE
+        ========================== -->
+
+        <section class="painel cidades">
+
+
+            <div class="titulo-painel">
+
+                <h2>
+                    Vendas por Cidade
+                </h2>
+
+            </div>
+
+
+            <div
+                class="mapa"
+                id="mapa-vendas"
+            >
+
+
+                <div class="mapa-placeholder">
+
+
+                    <span>
+                        🗺️
+                    </span>
+
+
+                    <p>
+                        Vendas por cidade
+                    </p>
+
+
+                    <small>
+                        O mapa será integrado posteriormente.
+                    </small>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
