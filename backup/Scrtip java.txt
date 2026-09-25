@@ -1,24 +1,4 @@
 // ========================================
-// FORMATAR VALOR EM REAL
-// ========================================
-
-function formatarMoeda(valor) {
-
-    return Number(valor).toLocaleString(
-
-        'pt-BR',
-
-        {
-            style: 'currency',
-            currency: 'BRL'
-        }
-
-    );
-
-}
-
-
-// ========================================
 // CARREGAR VENDAS
 // ========================================
 
@@ -115,6 +95,10 @@ async function carregarVendas() {
         ) {
 
 
+            // ========================================
+            // MAIOR VENDA
+            // ========================================
+
             const maiorVenda = Math.max(
 
                 ...dados.vendedores.map(
@@ -126,6 +110,10 @@ async function carregarVendas() {
 
             );
 
+
+            // ========================================
+            // CRIAR VENDEDORES
+            // ========================================
 
             dados.vendedores.forEach(
 
@@ -146,6 +134,8 @@ async function carregarVendas() {
                             : 0;
 
 
+                    // LINHA
+
                     const linha =
                         document.createElement(
                             'div'
@@ -155,6 +145,8 @@ async function carregarVendas() {
                     linha.className =
                         'vendedor';
 
+
+                    // POSIÇÃO
 
                     const posicao =
                         document.createElement(
@@ -170,6 +162,8 @@ async function carregarVendas() {
                         index + 1;
 
 
+                    // DADOS
+
                     const dadosVendedor =
                         document.createElement(
                             'div'
@@ -179,6 +173,8 @@ async function carregarVendas() {
                     dadosVendedor.className =
                         'dados-vendedor';
 
+
+                    // NOME
 
                     const nome =
                         document.createElement(
@@ -194,6 +190,8 @@ async function carregarVendas() {
                         vendedor.nome;
 
 
+                    // FUNDO BARRA
+
                     const barraContainer =
                         document.createElement(
                             'div'
@@ -203,6 +201,8 @@ async function carregarVendas() {
                     barraContainer.className =
                         'barra-container';
 
+
+                    // BARRA
 
                     const barra =
                         document.createElement(
@@ -232,6 +232,8 @@ async function carregarVendas() {
                         barraContainer
                     );
 
+
+                    // QUANTIDADE
 
                     const quantidade =
                         document.createElement(
@@ -306,6 +308,10 @@ async function carregarVendas() {
         ) {
 
 
+            // ========================================
+            // MAIOR QUANTIDADE
+            // ========================================
+
             const maiorPlano = Math.max(
 
                 ...dados.planos.map(
@@ -317,6 +323,10 @@ async function carregarVendas() {
 
             );
 
+
+            // ========================================
+            // CRIAR PLANOS
+            // ========================================
 
             dados.planos.forEach(
 
@@ -347,6 +357,10 @@ async function carregarVendas() {
                         'plano-item';
 
 
+                    // ========================================
+                    // INFORMAÇÕES
+                    // ========================================
+
                     const info =
                         document.createElement(
                             'div'
@@ -356,6 +370,8 @@ async function carregarVendas() {
                     info.className =
                         'plano-info';
 
+
+                    // NOME DO PLANO
 
                     const nome =
                         document.createElement(
@@ -370,6 +386,8 @@ async function carregarVendas() {
                     nome.textContent =
                         plano.nome;
 
+
+                    // QUANTIDADE
 
                     const quantidade =
                         document.createElement(
@@ -406,6 +424,10 @@ async function carregarVendas() {
                     );
 
 
+                    // ========================================
+                    // BARRA DO PLANO
+                    // ========================================
+
                     const barraFundo =
                         document.createElement(
                             'div'
@@ -434,6 +456,10 @@ async function carregarVendas() {
                         barra
                     );
 
+
+                    // ========================================
+                    // MONTAR ITEM
+                    // ========================================
 
                     item.appendChild(
                         info
@@ -466,106 +492,6 @@ async function carregarVendas() {
                 </div>
 
             `;
-
-        }
-
-
-        // ========================================
-        // COMISSÕES DOS VENDEDORES
-        // ========================================
-
-        if (dados.comissoes) {
-
-
-            const comissaoJonatas =
-
-                dados.comissoes[
-                    "JONATAS HENRIQUE SILVA DO CARMO"
-                ] || 0;
-
-
-            document
-                .getElementById(
-                    'comissao-jonatas'
-                )
-                .textContent =
-
-                formatarMoeda(
-                    comissaoJonatas
-                );
-
-
-            const comissaoKeila =
-
-                dados.comissoes[
-                    "KEILA THAIS LIMA SANTOS"
-                ] || 0;
-
-
-            document
-                .getElementById(
-                    'comissao-keila'
-                )
-                .textContent =
-
-                formatarMoeda(
-                    comissaoKeila
-                );
-
-
-            const comissaoLeilany =
-
-                dados.comissoes[
-                    "LEILANY LAVINIA LOPES DA SILVA"
-                ] || 0;
-
-
-            document
-                .getElementById(
-                    'comissao-leilany'
-                )
-                .textContent =
-
-                formatarMoeda(
-                    comissaoLeilany
-                );
-
-
-            const comissaoDenilson =
-
-                dados.comissoes[
-                    "DENILSON SOARES DA SILVA"
-                ] || 0;
-
-
-            document
-                .getElementById(
-                    'comissao-denilson'
-                )
-                .textContent =
-
-                formatarMoeda(
-                    comissaoDenilson
-                );
-
-        }
-
-
-        // ========================================
-        // COMISSÃO DO LÍDER
-        // AINDA NÃO CALCULADA
-        // ========================================
-
-        const campoComissaoLider =
-            document.getElementById(
-                'comissao-lider'
-            );
-
-
-        if (campoComissaoLider) {
-
-            campoComissaoLider.textContent =
-                formatarMoeda(0);
 
         }
 

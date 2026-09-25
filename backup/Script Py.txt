@@ -61,59 +61,6 @@ def normalizar_texto(texto):
 
 
 # ========================================
-# CALCULAR COMISSÃO
-# ========================================
-
-def calcular_comissao(valor):
-
-    if pd.isna(valor):
-        return 0.0
-
-
-    if 54.90 <= valor <= 64.90:
-
-        return 6.50
-
-
-    elif 65.00 <= valor <= 79.90:
-
-        return 8.00
-
-
-    elif 80.00 <= valor <= 89.90:
-
-        return 18.00
-
-
-    elif 90.00 <= valor <= 99.90:
-
-        return 30.00
-
-
-    elif 100.00 <= valor <= 149.90:
-
-        return 40.00
-
-
-    elif 150.00 <= valor <= 179.90:
-
-        return 50.00
-
-
-    elif 180.00 <= valor <= 199.00:
-
-        return 60.00
-
-
-    elif 200.00 <= valor <= 300.00:
-
-        return 80.00
-
-
-    return 0.0
-
-
-# ========================================
 # VENDEDORES NORMALIZADOS
 # ========================================
 
@@ -220,9 +167,7 @@ def carregar_excel():
 
             "Finalização Data",
 
-            "Plano",
-
-            "Valor"
+            "Plano"
 
         ]
 
@@ -343,7 +288,7 @@ def carregar_excel():
         print()
 
         print(
-            "Excel carregado com sucesso."
+            f"Excel carregado com sucesso."
         )
 
         print(
@@ -591,62 +536,6 @@ def ler_vendas(
 
 
     # ========================================
-    # CALCULAR COMISSÃO DE CADA VENDA
-    # ========================================
-
-    df["Comissao"] = (
-
-        df["Valor"]
-
-        .apply(
-            calcular_comissao
-        )
-
-    )
-
-
-    # ========================================
-    # SOMAR COMISSÃO POR VENDEDOR
-    # ========================================
-
-    comissoes = {}
-
-
-    for nome_original, nome_normalizado in zip(
-
-        VENDEDORES,
-
-        VENDEDORES_NORMALIZADOS
-
-    ):
-
-        vendas_vendedor = df[
-
-            df["Vendedor"]
-            == nome_normalizado
-
-        ]
-
-
-        total_comissao = (
-
-            vendas_vendedor["Comissao"]
-
-            .sum()
-
-        )
-
-
-        comissoes[nome_original] = round(
-
-            float(total_comissao),
-
-            2
-
-        )
-
-
-    # ========================================
     # TERMINAL - RANKING
     # ========================================
 
@@ -698,28 +587,6 @@ def ler_vendas(
         )
 
 
-    # ========================================
-    # TERMINAL - COMISSÕES
-    # ========================================
-
-    print("\n========================================")
-    print("COMISSÕES")
-    print("========================================")
-
-
-    for vendedor, valor in comissoes.items():
-
-        print(
-
-            vendedor,
-
-            "->",
-
-            f"R$ {valor:.2f}"
-
-        )
-
-
     print("========================================\n")
 
 
@@ -739,13 +606,7 @@ def ler_vendas(
             len(vendedores),
 
         "planos":
-            planos,
-
-        "comissoes":
-            comissoes,
-
-        "comissao_lider":
-            0.0
+            planos
 
     }
 

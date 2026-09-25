@@ -6,15 +6,9 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet" href="style.css">
 
     <title>
         Acompanhamento de Vendas
@@ -135,14 +129,68 @@
         <section class="painel ranking">
 
 
-            <div class="titulo-painel">
+            <!-- =========================
+                 CABEÇALHO DO RANKING
+            ========================== -->
 
-                <h2>
-                    🏆 Ranking de Vendas
-                </h2>
+            <div class="ranking-cabecalho">
+
+
+                <!-- TÍTULO -->
+
+                <div class="titulo-painel">
+
+                    <h2>
+                        🏆 Ranking de Vendas
+                    </h2>
+
+                </div>
+
+
+                <!-- =========================
+                     TOTAL DE VENDAS
+                ========================== -->
+
+                <div class="ranking-total">
+
+
+                    <!-- GRÁFICO CIRCULAR -->
+
+                    <div class="grafico-total">
+
+
+                        <div class="grafico-total-centro">
+
+                            <strong id="total-vendas">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- TEXTO -->
+
+                    <div class="ranking-total-info">
+
+                        <span>
+                            Total de Vendas
+                        </span>
+
+                    </div>
+
+
+                </div>
+
 
             </div>
 
+
+            <!-- =========================
+                 LISTA DE VENDEDORES
+            ========================== -->
 
             <div id="lista-vendedores">
 
@@ -169,42 +217,6 @@
                 <h2>
                     Vendas
                 </h2>
-
-            </div>
-
-
-            <!-- =========================
-                 TOTAL DE VENDAS
-            ========================== -->
-
-            <div class="resumo">
-
-
-                <div class="resumo-item">
-
-
-                    <div class="icone">
-
-                        💵
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            Total de Vendas
-                        </span>
-
-                        <strong id="total-vendas">
-                            0
-                        </strong>
-
-                    </div>
-
-
-                </div>
-
 
             </div>
 
@@ -238,43 +250,176 @@
 
 
         <!-- =========================
-             VENDAS POR CIDADE
+             COMISSÕES
         ========================== -->
 
-        <section class="painel cidades">
+        <section class="painel comissoes">
 
+
+            <!-- TÍTULO -->
 
             <div class="titulo-painel">
 
                 <h2>
-                    Vendas por Cidade
+                    💰 Comissões
                 </h2>
 
             </div>
 
 
-            <div
-                class="mapa"
-                id="mapa-vendas"
-            >
+            <!-- =========================
+                 COMISSÃO DO LÍDER
+            ========================== -->
+
+            <div class="comissao-total">
 
 
-                <div class="mapa-placeholder">
+                <div class="icone-comissao">
 
+                    💵
+
+                </div>
+
+
+                <div class="comissao-total-info">
 
                     <span>
-                        🗺️
+                        Comissão líder
                     </span>
 
+                    <strong id="comissao-lider">
+                        R$ 0,00
+                    </strong>
 
-                    <p>
-                        Vendas por cidade
-                    </p>
+                </div>
 
 
-                    <small>
-                        O mapa será integrado posteriormente.
-                    </small>
+            </div>
+
+
+            <!-- =========================
+                 VENDEDORES
+            ========================== -->
+
+            <div class="comissao-vendedores">
+
+
+                <h3>
+                    Vendedores
+                </h3>
+
+
+                <!-- JONATAS -->
+
+                <div class="comissao-item">
+
+
+                    <div class="comissao-vendedor">
+
+                        <span class="comissao-avatar">
+                            J
+                        </span>
+
+                        <span class="comissao-nome">
+                            Jonatas Henrique
+                        </span>
+
+                    </div>
+
+
+                    <strong
+                        class="comissao-valor"
+                        id="comissao-jonatas"
+                    >
+                        R$ 0,00
+                    </strong>
+
+
+                </div>
+
+
+                <!-- KEILA -->
+
+                <div class="comissao-item">
+
+
+                    <div class="comissao-vendedor">
+
+                        <span class="comissao-avatar">
+                            K
+                        </span>
+
+                        <span class="comissao-nome">
+                            Keila Thais
+                        </span>
+
+                    </div>
+
+
+                    <strong
+                        class="comissao-valor"
+                        id="comissao-keila"
+                    >
+                        R$ 0,00
+                    </strong>
+
+
+                </div>
+
+
+                <!-- LEILANY -->
+
+                <div class="comissao-item">
+
+
+                    <div class="comissao-vendedor">
+
+                        <span class="comissao-avatar">
+                            L
+                        </span>
+
+                        <span class="comissao-nome">
+                            Leilany Lavinia
+                        </span>
+
+                    </div>
+
+
+                    <strong
+                        class="comissao-valor"
+                        id="comissao-leilany"
+                    >
+                        R$ 0,00
+                    </strong>
+
+
+                </div>
+
+
+                <!-- DENILSON -->
+
+                <div class="comissao-item">
+
+
+                    <div class="comissao-vendedor">
+
+                        <span class="comissao-avatar">
+                            D
+                        </span>
+
+                        <span class="comissao-nome">
+                            Denilson Soares
+                        </span>
+
+                    </div>
+
+
+                    <strong
+                        class="comissao-valor"
+                        id="comissao-denilson"
+                    >
+                        R$ 0,00
+                    </strong>
 
 
                 </div>

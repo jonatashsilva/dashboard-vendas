@@ -8,14 +8,10 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-
     background: #f3f5f8;
-
     color: #0b3158;
-
     min-height: 100vh;
 }
 
@@ -25,21 +21,14 @@ body {
 ========================= */
 
 .topo {
-
     position: relative;
-
     width: 100%;
-
     min-height: 180px;
-
     padding: 25px 30px;
 
     display: grid;
-
     grid-template-columns: 330px 1fr 350px;
-
     align-items: center;
-
     gap: 25px;
 }
 
@@ -49,13 +38,9 @@ body {
 ========================= */
 
 .logo img {
-
     width: 330px;
-
     max-height: 140px;
-
     object-fit: contain;
-
     display: block;
 }
 
@@ -65,29 +50,19 @@ body {
 ========================= */
 
 .titulo {
-
     text-align: center;
 }
 
-
 .titulo h1 {
-
     font-size: 46px;
-
     font-weight: 700;
-
     color: #0b3158;
-
     white-space: nowrap;
 }
 
-
 .titulo p {
-
     margin-top: 8px;
-
     font-size: 27px;
-
     color: #0b3158;
 }
 
@@ -97,51 +72,36 @@ body {
 ========================= */
 
 .filtros-topo {
-
     background: #ffffff;
-
     padding: 18px;
-
     border-radius: 15px;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.12);
 
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 12px;
 }
 
-
 .campo-data {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 6px;
 }
 
-
 .campo-data label {
-
     font-size: 16px;
-
     color: #222;
 }
 
-
 .campo-data input {
-
     width: 100%;
-
     height: 38px;
-
     padding: 5px 10px;
 
     border: 1px solid #c8cdd3;
-
     border-radius: 6px;
 
     font-size: 15px;
@@ -153,27 +113,20 @@ body {
 ========================= */
 
 .acoes {
-
     grid-column: 1 / 3;
 
     display: flex;
-
     justify-content: space-around;
 
     gap: 15px;
-
     margin-top: 4px;
 }
 
-
 .acoes button {
-
     border: none;
-
     background: transparent;
 
     font-size: 19px;
-
     color: #173c61;
 
     cursor: pointer;
@@ -185,33 +138,26 @@ body {
     transition: 0.2s;
 }
 
-
 .acoes button:hover {
-
     background: #eef3f7;
 }
 
 
-.btn-filtrar {
-
-    color: #173c61;
-}
-
-
 /* =========================
-   CONTAINER
+   CONTAINER PRINCIPAL
 ========================= */
 
 .container {
-
     width: calc(100% - 60px);
 
     margin: 0 auto 30px;
 
     display: grid;
 
-    /* Ranking maior | Vendas | Cidade */
-    grid-template-columns: 1.35fr 1fr 1fr;
+    grid-template-columns:
+        1.35fr
+        1fr
+        1fr;
 
     gap: 20px;
 
@@ -224,29 +170,25 @@ body {
 ========================= */
 
 .painel {
-
     background: #ffffff;
 
     border-radius: 15px;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.13);
+    box-shadow:
+        0 4px 12px
+        rgba(0, 0, 0, 0.13);
 
     overflow: hidden;
 
     min-height: 650px;
 }
 
-
 .titulo-painel {
-
     padding: 22px 20px 15px;
 }
 
-
 .titulo-painel h2 {
-
     font-size: 28px;
-
     color: #0b3158;
 }
 
@@ -256,28 +198,164 @@ body {
 ========================= */
 
 .ranking {
-
     padding-bottom: 20px;
 }
 
 
-.ranking .titulo-painel {
+/* =========================
+   CABEÇALHO DO RANKING
+========================= */
 
-    padding-bottom: 10px;
+.ranking-cabecalho {
+    min-height: 125px;
+
+    padding-right: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
 }
 
 
-#lista-vendedores {
+.ranking-cabecalho .titulo-painel {
+    padding: 22px 20px;
+    flex: 1;
+}
 
+
+/* =========================
+   TOTAL DE VENDAS
+========================= */
+
+.ranking-total {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   GRÁFICO CIRCULAR
+========================= */
+
+.grafico-total {
+    width: 92px;
+    height: 92px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: conic-gradient(
+        #087b25 0deg,
+        #0c9c36 150deg,
+        #126ab0 300deg,
+        #dfe5eb 300deg,
+        #dfe5eb 360deg
+    );
+
+    position: relative;
+
+    flex-shrink: 0;
+}
+
+
+/* CÍRCULO BRANCO INTERNO */
+
+.grafico-total::before {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   NÚMERO NO CENTRO
+========================= */
+
+.grafico-total-centro {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.grafico-total-centro strong {
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #0b3158;
+}
+
+
+/* =========================
+   TEXTO TOTAL DE VENDAS
+========================= */
+
+.ranking-total-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 75px;
+}
+
+
+.ranking-total-info span {
+    font-size: 14px;
+
+    line-height: 18px;
+
+    color: #555;
+}
+
+
+/* =========================
+   LISTA DO RANKING
+========================= */
+
+#lista-vendedores {
     padding: 0 20px;
 }
 
 
 .vendedor {
-
     display: grid;
 
-    grid-template-columns: 35px 1fr auto;
+    grid-template-columns:
+        35px
+        minmax(0, 1fr)
+        auto;
 
     align-items: center;
 
@@ -288,7 +366,6 @@ body {
 
 
 .posicao {
-
     font-size: 18px;
 
     font-weight: bold;
@@ -300,13 +377,11 @@ body {
 
 
 .dados-vendedor {
-
     min-width: 0;
 }
 
 
 .nome-vendedor {
-
     font-size: 20px;
 
     color: #222;
@@ -322,7 +397,6 @@ body {
 
 
 .barra-container {
-
     width: 100%;
 
     height: 15px;
@@ -336,366 +410,6 @@ body {
 
 
 .barra-venda {
-
-    height: 100%;
-
-    background: linear-gradient(
-        90deg,
-        #087b25,
-        #0c9c36,
-        #126ab0
-    );
-
-    border-radius: 20px;
-}
-
-
-.valor-venda {
-
-    font-size: 18px;
-
-    color: #222;
-
-    white-space: nowrap;
-}
-
-
-/* =========================
-   RESUMO
-========================= */
-
-.resumo {
-    display: grid;
-    grid-template-columns: 1fr;
-
-    gap: 10px;
-
-    padding: 10px 20px 20px;
-
-    border-bottom: 1px solid #e1e4e8;
-}
-
-
-.resumo-item {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-
-.icone {
-
-    width: 48px;
-
-    height: 48px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 10px;
-
-    background: #e7f3e9;
-
-    font-size: 23px;
-
-    flex-shrink: 0;
-}
-
-
-.resumo-item span {
-
-    display: block;
-
-    font-size: 14px;
-
-    color: #333;
-
-    margin-bottom: 3px;
-}
-
-
-.resumo-item strong {
-
-    display: block;
-
-    font-size: 19px;
-
-    color: #111;
-}
-
-
-/* =========================
-   GRÁFICO
-========================= */
-
-.grafico {
-
-    height: 430px;
-
-    margin: 20px;
-
-    border-bottom: 1px solid #ccc;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: #777;
-}
-
-
-.grafico p {
-
-    font-size: 24px;
-
-    margin-bottom: 8px;
-
-    color: #0b3158;
-}
-
-
-.grafico span {
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   MAPA
-========================= */
-
-.cidades {
-
-    position: relative;
-}
-
-
-.mapa {
-
-    height: calc(100% - 75px);
-
-    min-height: 550px;
-
-    margin: 0 15px 15px;
-
-    border-radius: 10px;
-
-    background: #f1f4f6;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-.mapa-placeholder {
-
-    text-align: center;
-
-    color: #68737e;
-}
-
-
-.mapa-placeholder span {
-
-    display: block;
-
-    font-size: 70px;
-
-    margin-bottom: 15px;
-}
-
-
-.mapa-placeholder p {
-
-    font-size: 21px;
-
-    color: #0b3158;
-
-    margin-bottom: 5px;
-}
-
-
-.mapa-placeholder small {
-
-    font-size: 13px;
-}
-
-
-/* =========================
-   RESPONSIVIDADE
-========================= */
-
-@media (max-width: 1300px) {
-
-    .topo {
-
-        grid-template-columns: 250px 1fr 300px;
-    }
-
-
-    .logo img {
-
-        width: 250px;
-    }
-
-
-    .titulo h1 {
-
-        font-size: 38px;
-    }
-
-
-    .titulo p {
-
-        font-size: 22px;
-    }
-
-
-    .container {
-
-        grid-template-columns: 1fr 1.2fr 1fr;
-    }
-
-
-    .titulo-painel h2 {
-
-        font-size: 23px;
-    }
-
-}
-
-
-@media (max-width: 1000px) {
-
-    .topo {
-
-        grid-template-columns: 1fr;
-
-        text-align: center;
-    }
-
-
-    .logo {
-
-        display: flex;
-
-        justify-content: center;
-    }
-
-
-    .titulo h1 {
-
-        white-space: normal;
-    }
-
-
-    .container {
-
-        grid-template-columns: 1fr;
-    }
-
-}
-
-/* =========================
-   PLANOS VENDIDOS
-========================= */
-
-.planos-vendidos {
-
-    padding: 20px;
-
-}
-
-
-.planos-vendidos h3 {
-
-    font-size: 21px;
-
-    color: #0b3158;
-
-    margin-bottom: 20px;
-
-}
-
-
-.plano-item {
-
-    margin-bottom: 18px;
-
-}
-
-
-.plano-info {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 10px;
-
-    margin-bottom: 7px;
-
-}
-
-
-.plano-nome {
-
-    font-size: 16px;
-
-    color: #222;
-
-    font-weight: 500;
-
-}
-
-
-.plano-quantidade {
-
-    font-size: 15px;
-
-    color: #222;
-
-    white-space: nowrap;
-
-}
-
-
-/* FUNDO DA BARRA */
-
-.plano-barra-fundo {
-
-    width: 100%;
-
-    height: 13px;
-
-    background: #e1e6ed;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-}
-
-
-/* BARRA COLORIDA */
-
-.plano-barra {
-
     height: 100%;
 
     background: linear-gradient(
@@ -708,29 +422,501 @@ body {
     border-radius: 20px;
 
     transition: width 0.4s ease;
-
 }
 
 
-/* SEM DADOS */
+.valor-venda {
+    font-size: 18px;
+
+    color: #222;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   PLANOS VENDIDOS
+========================= */
+
+.planos-vendidos {
+    padding: 10px 20px 20px;
+}
+
+
+.planos-vendidos h3 {
+    font-size: 21px;
+
+    color: #0b3158;
+
+    margin-bottom: 20px;
+}
+
+
+.plano-item {
+    margin-bottom: 18px;
+}
+
+
+.plano-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 7px;
+}
+
+
+.plano-nome {
+    font-size: 16px;
+
+    color: #222;
+
+    font-weight: 500;
+}
+
+
+.plano-quantidade {
+    font-size: 15px;
+
+    color: #222;
+
+    white-space: nowrap;
+}
+
+
+.plano-barra-fundo {
+    width: 100%;
+
+    height: 13px;
+
+    background: #e1e6ed;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.plano-barra {
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #087b25,
+        #0c9c36,
+        #126ab0
+    );
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* =========================
+   COMISSÕES
+========================= */
+
+.comissoes {
+    position: relative;
+}
+
+
+/* =========================
+   COMISSÃO DO LÍDER
+========================= */
+
+.comissao-total {
+    margin: 10px 20px 25px;
+
+    padding: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background: #f3f7f4;
+
+    border-radius: 12px;
+
+    border: 1px solid #e1e9e3;
+}
+
+
+.icone-comissao {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #e7f3e9;
+
+    border-radius: 12px;
+
+    font-size: 25px;
+}
+
+
+.comissao-total-info {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.comissao-total-info span {
+    font-size: 15px;
+
+    color: #555;
+
+    margin-bottom: 5px;
+}
+
+
+.comissao-total-info strong {
+    font-size: 26px;
+
+    color: #0b3158;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   VENDEDORES - COMISSÕES
+========================= */
+
+.comissao-vendedores {
+    padding: 0 20px 25px;
+}
+
+
+.comissao-vendedores h3 {
+    font-size: 21px;
+
+    color: #0b3158;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   LINHA DA COMISSÃO
+========================= */
+
+.comissao-item {
+    min-height: 68px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 12px 8px;
+
+    border-bottom: 1px solid #e6e9ed;
+}
+
+
+.comissao-item:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================
+   VENDEDOR DA COMISSÃO
+========================= */
+
+.comissao-vendedor {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+.comissao-avatar {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #e7f3e9;
+
+    color: #087b25;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+.comissao-nome {
+    font-size: 17px;
+
+    color: #222;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.comissao-valor {
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #0b3158;
+
+    white-space: nowrap;
+
+    text-align: right;
+}
+
+
+/* =========================
+   SEM DADOS
+========================= */
 
 .sem-dados {
-
     padding: 20px 0;
 
     color: #777;
 
     font-size: 15px;
+}
+
+
+/* =========================
+   ERROS
+========================= */
+
+.erro {
+    padding: 20px;
+
+    color: #a11;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1300px) {
+
+    .topo {
+        grid-template-columns:
+            250px
+            1fr
+            300px;
+    }
+
+
+    .logo img {
+        width: 250px;
+    }
+
+
+    .titulo h1 {
+        font-size: 38px;
+    }
+
+
+    .titulo p {
+        font-size: 22px;
+    }
+
+
+    .container {
+        grid-template-columns:
+            1.35fr
+            1fr
+            1fr;
+    }
+
+
+    .titulo-painel h2 {
+        font-size: 23px;
+    }
+
+
+    .grafico-total {
+        width: 80px;
+        height: 80px;
+    }
+
+
+    .grafico-total::before {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .grafico-total-centro strong {
+        font-size: 24px;
+    }
+
+
+    .ranking-total-info span {
+        font-size: 12px;
+    }
+
+
+    .comissao-nome {
+        font-size: 15px;
+    }
+
+
+    .comissao-valor {
+        font-size: 15px;
+    }
 
 }
 
 
-/* ERROS */
+/* =========================
+   TABLET
+========================= */
 
-.erro {
+@media (max-width: 1000px) {
 
-    padding: 20px;
+    .topo {
+        grid-template-columns: 1fr;
 
-    color: #a11;
+        text-align: center;
+    }
+
+
+    .logo {
+        display: flex;
+
+        justify-content: center;
+    }
+
+
+    .titulo h1 {
+        white-space: normal;
+    }
+
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .painel {
+        min-height: auto;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+
+    .topo {
+        padding: 20px 12px;
+    }
+
+
+    .titulo h1 {
+        font-size: 29px;
+    }
+
+
+    .titulo p {
+        font-size: 19px;
+    }
+
+
+    .filtros-topo {
+        grid-template-columns: 1fr;
+    }
+
+
+    .acoes {
+        grid-column: 1;
+
+        flex-direction: column;
+    }
+
+
+    .ranking-cabecalho {
+        padding-right: 12px;
+    }
+
+
+    .ranking-cabecalho .titulo-painel {
+        padding-left: 12px;
+    }
+
+
+    .grafico-total {
+        width: 68px;
+        height: 68px;
+    }
+
+
+    .grafico-total::before {
+        width: 51px;
+        height: 51px;
+    }
+
+
+    .grafico-total-centro strong {
+        font-size: 20px;
+    }
+
+
+    .ranking-total-info {
+        display: none;
+    }
+
+
+    .comissao-nome {
+        font-size: 14px;
+    }
+
+
+    .comissao-valor {
+        font-size: 14px;
+    }
 
 }
